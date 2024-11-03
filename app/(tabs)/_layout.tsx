@@ -33,6 +33,17 @@ export default function TabLayout() {
           ),
         }}
       />
+
+<Tabs.Screen
+        name="past_entries"
+        options={{
+          title: 'Past Entries',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'calendar' : 'calendar-outline'} color={color} />
+          ),
+        }}
+      />
+
       <Tabs.Screen
         name="settings"
         options={{

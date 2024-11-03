@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert } from 'react-native';
+import { View, Text, TextInput, Button, Alert, FlatList } from 'react-native';
 
 const NovaDaily: React.FC = () => {
     const [input, setInput] = useState('');
+    const [accomplishments, setAccomplishments] = useState<string[]>([]); // State to hold the list of accomplishments
 
     const handleSubmit = async () => {
         if (!input) {
@@ -18,10 +19,13 @@ const NovaDaily: React.FC = () => {
                 },
                 body: JSON.stringify({ accomplishment: input }),
             });
+            console.log("HIII")
 
             const data = await response.json();
+            console.log(data.input)
             if (response.ok) {
                 Alert.alert("Success", "Your accomplishment has been logged!");
+                setAccomplishments(prev => [...prev, data.input]); 
                 setInput(''); // Clear input after successful submission
             } else {
                 Alert.alert("Error", data.message || "Something went wrong.");
@@ -85,12 +89,29 @@ const NovaDaily: React.FC = () => {
             <Button title="Submit" onPress={handleSubmit} color="#9e42f5" />
             
             <Text style={{
-                fontSize: 60,
-                color: '#9e42f5',
-                marginTop: 20
+                fontSize: 24,
+                color: '#ffffff',
+                marginTop: 20,
+                marginBottom: 10
             }}>
-                {/* Add content here if needed */}
+                Your Accomplishments:
             </Text>
+
+            {/* Displaying the list of accomplishments */}
+            <FlatList
+                data={accomplishments}
+                keyExtractor={(item, index) => index.toString()} // Use index as key for simplicity
+                renderItem={({ item }) => (
+                    <Text style={{
+                        fontSize: 18,
+                        color: '#d0a0ff',
+                        marginBottom: 5
+                    }}>
+                        {item}
+                    </Text>
+                )}
+                style={{ width: '100%' }} // Ensure the list takes full width
+            />
         </View>
     );
 };

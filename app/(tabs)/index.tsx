@@ -24,7 +24,8 @@ const NovaDaily: React.FC = () => {
                 </View>
 
                 <View style={styles.entryContainer}>
-                    <TouchableOpacity style={[styles.button, styles.pastEntries]}>
+                  {/* @ts-ignore */}
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('past_entries')}>
                         <Text style={styles.buttonText}>Past Entries 📈</Text>
                     </TouchableOpacity>
                     <Text style={styles.description}>View Your Past Entries and Trends</Text>
