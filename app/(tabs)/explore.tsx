@@ -11,7 +11,7 @@ const NovaDaily: React.FC = () => {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/submit', {
+            const response = await fetch('http://localhost:5000/api/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,8 +89,8 @@ const NovaDaily: React.FC = () => {
                 color: '#9e42f5',
                 marginTop: 20
             }}>
-                
-    
+                {/* Add content here if needed */}
+            </Text>
         </View>
     );
 };
