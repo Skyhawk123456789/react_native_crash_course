@@ -23,6 +23,8 @@ const NovaDaily: React.FC = () => {
 
             const data = await response.json();
             console.log(data.input)
+            console.log(data.sentiment)
+            console.log(data.subjectivity)
             if (response.ok) {
                 Alert.alert("Success", "Your accomplishment has been logged!");
                 setAccomplishments(prev => [...prev, data.input]); 
@@ -65,7 +67,7 @@ const NovaDaily: React.FC = () => {
                 textAlign: 'center',
                 marginBottom: 20
             }}>
-                Log Your Accomplishments Here!
+                Log Your Day Here!
             </Text>
 
             <TextInput
@@ -94,7 +96,7 @@ const NovaDaily: React.FC = () => {
                 marginTop: 20,
                 marginBottom: 10
             }}>
-                Your Accomplishments:
+                Nova Logs:
             </Text>
 
             {/* Displaying the list of accomplishments */}
