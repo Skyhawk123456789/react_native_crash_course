@@ -11,7 +11,7 @@ const NovaDaily: React.FC = () => {
         }
 
         try {
-            const response = await fetch('http://your-flask-backend-url/api/accomplishments', {
+            const response = await fetch('http://127.0.0.1:5000/api/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
