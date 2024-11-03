@@ -90,7 +90,7 @@ const NovaDaily: React.FC = () => {
                 marginTop: 20
             }}>
                 
-            </Text>
+    
         </View>
     );
 };
