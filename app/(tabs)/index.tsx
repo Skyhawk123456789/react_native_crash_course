@@ -15,6 +15,7 @@ const NovaDaily: React.FC = () => {
                 <View style={styles.entryContainer}>
                 <TouchableOpacity
         style={styles.button}
+        // @ts-ignore
         onPress={() => navigation.navigate('explore')} // Make sure this matches the name in your TabLayout
       >
                         <Text style={styles.buttonText}>Daily Entry 🔥</Text>
@@ -29,7 +30,9 @@ const NovaDaily: React.FC = () => {
                     <Text style={styles.description}>View Your Past Entries and Trends</Text>
                 </View>
 
+
                 <View style={styles.entryContainer}>
+                  {/*  @ts-ignore */}
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('settings')}>
                         <Text style={styles.buttonText}>Settings ⚙️</Text>
                     </TouchableOpacity>
