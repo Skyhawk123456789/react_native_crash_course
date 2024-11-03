@@ -89,7 +89,7 @@ const NovaDaily: React.FC = () => {
                 color: '#9e42f5',
                 marginTop: 20
             }}>
-                🏔️
+                
             </Text>
         </View>
     );
