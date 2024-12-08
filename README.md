@@ -1,3 +1,38 @@
+# Welcome to NovaDaily - Your new daily journaling log.
+
+# Run Program
+
+1. Open REACT_NATIVE_CRASH_COURSE in VSC.
+
+2. Open Terminal 1 - REACT NATIVE TSX Frontend
+   run "npx expo start -c" in the terminal.
+
+3. Open Terminal 2 side by side - Python FLASK Backend Implementation
+   run "python app.py"
+
+4. Scan QR code for EXPO GO app or visit the url for pc.
+
+
+
+# Basic structure
+
+1. User creates entry on frontend. Hits submits. Terminal 1.
+
+2. Submit button triggers data packets to be redirected locally to a different port
+                  [would be a separate server eventually]
+   that runs the calculations. Terminal 1 --> Terminal 2
+
+3. Server performs calculations and return data packets back to client (currently local routing) Terminal 2 --> Terminal 1.
+
+4. Displays results on clients end. Terminal 1.
+
+
+
+
+
+
+
+# ============== AUTO-GENERATED BELOW =================
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
